@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/nice">
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:id="@+id/tab_layout"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="center"
+        app:tabTextColor="@color/colorAccent"
+        app:tabIndicatorHeight="40dp"
+        app:tabIndicatorColor="@android:color/primary_text_light_nodisable"
+        app:tabIndicator="@drawable/tab_indicator"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewpager"
+        android:background="@drawable/nice"
+        android:layout_below="@+id/tab_layout"
+        android:layout_alignBottom="@+id/frag_bottom_player">
+
+        <fragment
+            android:name="com.example.musicplayerdraft.NowPlayingBtmFrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_now_playing_btm" />
+    </androidx.viewpager.widget.ViewPager>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/frag_bottom_player">
+
+    </FrameLayout>
+
+
+</RelativeLayout>
